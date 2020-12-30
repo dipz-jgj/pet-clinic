@@ -6,6 +6,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+// Extends ke class abstract AbstractMapService utk template & store data CRUDNya (karena ada Map)
+// Implement ke interface OwnerService utk function2nya
+
 @Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService{
 

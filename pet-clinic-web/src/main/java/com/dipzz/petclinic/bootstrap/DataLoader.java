@@ -1,6 +1,7 @@
 package com.dipzz.petclinic.bootstrap;
 
 import com.dipzz.petclinic.model.Owner;
+import com.dipzz.petclinic.model.Pet;
 import com.dipzz.petclinic.model.PetType;
 import com.dipzz.petclinic.model.Vet;
 import com.dipzz.petclinic.services.OwnerService;
@@ -8,6 +9,8 @@ import com.dipzz.petclinic.services.PetTypeService;
 import com.dipzz.petclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 /**
  * Load data on startup
@@ -40,12 +43,32 @@ public class DataLoader implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
+        owner1.setAddress("323 Street");
+        owner1.setCity("Los Angeles");
+        owner1.setTelephone("444323");
+
+        Pet snowy = new Pet();
+        snowy.setName("Snowy");
+        snowy.setPetType(saveDogPetType);
+        snowy.setOwner(owner1);
+        snowy.setBirthDate(LocalDate.now());
+        owner1.getPets().add(snowy);
 
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Fiona");
         owner2.setLastName("M");
+        owner2.setAddress("212 Street");
+        owner2.setCity("San Diego");
+        owner2.setTelephone("565743");
+
+        Pet jerry = new Pet();
+        jerry.setName("Jerry");
+        jerry.setPetType(saveCatPetType);
+        jerry.setOwner(owner2);
+        jerry.setBirthDate(LocalDate.now());
+        owner2.getPets().add(jerry);
 
         ownerService.save(owner2);
 

@@ -5,6 +5,7 @@ import com.dipzz.petclinic.model.Pet;
 import com.dipzz.petclinic.services.OwnerService;
 import com.dipzz.petclinic.services.PetService;
 import com.dipzz.petclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -13,6 +14,7 @@ import java.util.Set;
 // Implement ke interface OwnerService utk function2nya
 
 @Service
+@Profile({"default", "map"})
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService{
 
     // Tambahkan class relasi owner ke pettype & pet

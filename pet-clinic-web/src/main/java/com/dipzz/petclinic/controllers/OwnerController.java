@@ -12,7 +12,7 @@ public class OwnerController {
     // bikin refrence ke interface OwnerService
     private final OwnerService ownerService;
 
-    // Constructor injection terhadap intf OwnerService
+    // Constructor injection terhadap interface OwnerService
     public OwnerController(OwnerService ownerService) {
         this.ownerService = ownerService;
     }
